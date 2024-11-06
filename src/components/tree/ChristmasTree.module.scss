@@ -4,23 +4,21 @@
   &:before {
     content: "";
     position: absolute;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 12.5rem;
-    height: 1.25rem;
     top: 11.25rem;
     left: -5rem;
+    height: 1.25rem;
+    width: 12.5rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 
 .tree {
   position: relative;
-  background-color: #57462a;
-  //background-image: url("assets/pine_tree_trunk_texture.jpg");
-  background-size: cover;
-  width: 2.1875rem;
-  height: 4.375rem;
   top: 7.5rem;
+  height: 4.375rem;
+  width: 2.1875rem;
+  background-color: #5e5342;
 
   .tree-top {
     position: absolute;
@@ -28,9 +26,7 @@
     width: 0;
     border-right: 4.375rem solid transparent;
     border-left: 4.375rem solid transparent;
-    border-bottom: 7.5rem solid #64a85b;
-    //background-image: url("assets/pine_tree_trunk_texture.jpg");
-    //border-image-source: url("assets/pine_tree_green_texture.jpg");
+    border-bottom: 7.5rem solid #238a5b;
     top: -15rem;
     left: -3.3125rem;
     z-index: 1;
@@ -38,7 +34,7 @@
     &:before {
       content: "";
       position: absolute;
-      border-top: 0.625rem solid rgba(0, 0, 0, 0.5);
+      border-top: 0.625rem solid rgba(0, 0, 0, 0.4);
       border-right: 0.3225rem solid transparent;
       border-left: 6.5825rem solid transparent;
       top: 7.5rem;
@@ -49,7 +45,7 @@
     &:after {
       content: "";
       position: absolute;
-      border-top: 0.625rem solid rgba(0, 0, 0, 0.5);
+      border-top: 0.625rem solid rgba(0, 0, 0, 0.4);
       border-right: 0.3225rem solid transparent;
       border-left: 8.4475rem solid transparent;
       top: 13.125rem;
@@ -75,6 +71,6 @@
     width: 6.25rem;
     border-right: 3.125rem solid transparent;
     border-left: 3.125rem solid transparent;
-    border-bottom: 6.25rem solid #64a85b;
+    border-bottom: 6.25rem solid #238a5b;
   }
 }
