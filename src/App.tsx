@@ -1,4 +1,4 @@
-import ChristmasTree from "./components/tree/ChristmasTree";
+import ChristmasTree from "src/components/tree/ChristmasTree";
 
 const App = () => (
   <div>

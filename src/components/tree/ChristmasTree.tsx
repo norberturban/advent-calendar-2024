@@ -1,4 +1,4 @@
-import Ornament from "../ornament/Ornament";
+import Ornament from "src/components/ornament/Ornament";
 
 import styles from "./ChristmasTree.module.scss";
 
@@ -6,6 +6,7 @@ const ChristmasTree = () => (
   <div className={styles.christmasDecorations}>
     <div className={styles.tree}>
       <div className={styles.treeTop}>
+        <div className={styles.star}></div>
         <Ornament day={1} />
         <Ornament day={2} />
         <Ornament day={3} />

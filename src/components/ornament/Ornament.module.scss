@@ -1,7 +1,7 @@
 .ornament {
   position: absolute;
-  height: 1.25rem;
-  width: 1.25rem;
+  height: 1.15rem;
+  width: 1.15rem;
   border-radius: 50%;
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.7);
   z-index: 10;
@@ -10,34 +10,34 @@
 
   /* Elements where index % 4 === 0 */
   &:nth-child(4n + 1) {
-    background-image: url("https://img.freepik.com/free-vector/flat-christmas-pattern-design_23-2149828438.jpg");
+    background-image: url("src/assets/ornament_pattern_1.jpg");
   }
 
   /* Elements where index % 4 === 1 */
   &:nth-child(4n + 2) {
-    background-image: url("https://www.creativefabrica.com/wp-content/uploads/2020/10/23/Simple-Christmas-patterns-Graphics-6232117-1-580x386.png");
+    background-image: url("src/assets/ornament_pattern_2.jpg");
   }
 
   /* Elements where index % 4 === 2 */
   &:nth-child(4n + 3) {
-    background-image: url("https://img.freepik.com/free-vector/vintage-christmas-pattern_23-2148775540.jpg?semt=ais_hybrid");
+    background-image: url("src/assets/ornament_pattern_3.jpg");
   }
 
   /* Elements where index % 4 === 3 */
   &:nth-child(4n + 4) {
-    background-image: url("https://i.pinimg.com/736x/af/63/df/af63df818496a187f15dc1b7ab2fd91d.jpg");
+    background-image: url("src/assets/ornament_pattern_4.jpg");
   }
 
   .pendant {
     position: absolute;
     top: -0.1rem;
-    right: 0.45rem;
+    right: 0.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 0.15rem;
     width: 0.35rem;
-    background-color: #9d7006;
+    background-color: #c68d09;
     z-index: 5;
 
     .circle {
@@ -46,7 +46,7 @@
       width: 0.1rem;
       height: 0.125rem;
       border-radius: 50%;
-      border: 0.75px solid #9d7006;
+      border: 0.75px solid #c68d09;
     }
   }
 }
