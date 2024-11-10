@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import classNames from "classnames";
+
+import AdventCalendarContext from "src/context/AdventCalendarContext";
 
 import styles from "./Ornament.module.scss";
 
@@ -10,8 +13,11 @@ interface OrnamentProps {
 const Ornament = (props: OrnamentProps) => {
   const { className, day } = props;
 
+  const { setOpenedDay } = useContext(AdventCalendarContext);
+
   const handleClick = () => {
     console.log("Clicked on day ", day);
+    setOpenedDay(day);
   };
 
   return (

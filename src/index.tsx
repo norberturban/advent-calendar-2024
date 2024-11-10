@@ -4,6 +4,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 
 import App from "./App";
 import ErrorPage from "./ErrorPage";
+import AdventCalendarContextProvider from "./context/AdventCalendarContextProvider";
 
 import "./index.scss";
 
@@ -21,6 +22,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AdventCalendarContextProvider>
+      <RouterProvider router={router} />
+    </AdventCalendarContextProvider>
   </StrictMode>
 );
