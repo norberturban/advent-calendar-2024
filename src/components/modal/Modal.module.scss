@@ -1,14 +1,71 @@
 .modal {
-  max-width: 20rem;
-  padding: 2rem;
-  border: 0;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  box-shadow: hsl(0 0% 0% / 10%) 0 0 0.5rem 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  border: none;
+  background: transparent;
   outline: none;
 
   &::backdrop {
     background: hsl(0 0% 0% / 50%);
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 12.5rem;
+    width: 15.5rem;
+    padding: 0;
+    border-radius: 1.5rem;
+    background-color: #eb2335;
+    outline: none;
+
+    .top {
+      position: absolute;
+      top: 0.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        height: 1.5rem;
+        width: 10rem;
+      }
+
+      .hole {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        width: 3rem;
+        border-radius: 2.5rem;
+        background-color: #f5f9ff;
+        box-shadow: inset 0px 20px 12px -10px rgba(0, 0, 0, 0.6);
+
+        .hanger {
+          position: absolute;
+          top: -2rem;
+          height: 3rem;
+          width: 1.5rem;
+          border-radius: 5rem;
+          background-color: #00c477;
+          box-shadow: inset 10px 0px 8px 0px rgb(0, 134, 81);
+        }
+      }
+    }
+
+    .body {
+      height: 8rem;
+      width: 100%;
+      background-color: #f5f9ff;
+      box-shadow: 0px 20px 10px 5px rgba(31, 31, 31, 0.5);
+    }
   }
 }
 

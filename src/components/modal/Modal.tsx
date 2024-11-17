@@ -13,6 +13,7 @@ const Modal = (props: ModalProps) => {
   const { isOpen, hasCloseBtn = true, onClose, children } = props;
 
   const [isModalOpen, setModalOpen] = useState(isOpen);
+
   const modalRef = useRef<HTMLDialogElement | null>(null);
 
   const handleCloseModal = () => {
@@ -46,12 +47,24 @@ const Modal = (props: ModalProps) => {
 
   return (
     <dialog ref={modalRef} onKeyDown={handleKeyDown} className={styles.modal}>
-      {hasCloseBtn && (
-        <button className={styles.closeButton} onClick={handleCloseModal}>
-          Close
-        </button>
-      )}
-      {children}
+      <div className={styles.container}>
+        <div className={styles.top}>
+          <div>
+            <div className={styles.hole}>
+              <div className={styles.hanger}></div>
+            </div>
+            <div className={styles.hole}>
+              <div className={styles.hanger}></div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.body}>{children}</div>
+        {hasCloseBtn && (
+          <button className={styles.closeButton} onClick={handleCloseModal}>
+            Close
+          </button>
+        )}
+      </div>
     </dialog>
   );
 };
