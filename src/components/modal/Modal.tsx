@@ -15,6 +15,24 @@ const Modal = (props: ModalProps) => {
   const [isModalOpen, setModalOpen] = useState(isOpen);
 
   const modalRef = useRef<HTMLDialogElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setModalOpen(false);
+        if (onClose) {
+          onClose();
+        }
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleCloseModal = () => {
     if (onClose) {
@@ -47,7 +65,7 @@ const Modal = (props: ModalProps) => {
 
   return (
     <dialog ref={modalRef} onKeyDown={handleKeyDown} className={styles.modal}>
-      <div className={styles.container}>
+      <div className={styles.container} ref={containerRef}>
         <div className={styles.top}>
           <div>
             <div className={styles.hole}>
