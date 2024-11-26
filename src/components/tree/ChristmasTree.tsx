@@ -1,4 +1,5 @@
 import Ornament from "src/components/ornament/Ornament";
+import GiftBox from "src/components/giftBoxes/GiftBox";
 
 import styles from "./ChristmasTree.module.scss";
 
@@ -37,6 +38,10 @@ const ChristmasTree = () => (
         <Ornament day={24} />
       </div>
     </div>
+
+    <GiftBox />
+    <GiftBox boxPosition={{ top: "13rem", right: "4.15rem" }} giftBackgroundColor="#2c717a" />
+    <GiftBox boxPosition={{ right: "0.85rem" }} giftBackgroundColor="#ffadba" />
   </div>
 );
 
