@@ -3,6 +3,10 @@
   top: 13.25rem;
   right: 7.5rem;
   z-index: 10;
+
+  &--dark {
+    filter: brightness(0.7);
+  }
 }
 
 .tape {

@@ -13,7 +13,7 @@ interface OrnamentProps {
 const Ornament = (props: OrnamentProps) => {
   const { className, day } = props;
 
-  const { setOpenedDay } = useContext(AdventCalendarContext);
+  const { isDarkMode, setOpenedDay } = useContext(AdventCalendarContext);
 
   const handleClick = () => {
     console.log("Clicked on day ", day);
@@ -21,7 +21,12 @@ const Ornament = (props: OrnamentProps) => {
   };
 
   return (
-    <div className={classNames(styles.ornament, styles[`ornament${day}`], className)} onClick={handleClick}>
+    <div
+      className={classNames(styles.ornament, styles[`ornament${day}`], className, {
+        [styles["ornament--dark"]]: isDarkMode
+      })}
+      onClick={handleClick}
+    >
       <div className={styles.pendant}>
         <div className={styles.circle}></div>
       </div>

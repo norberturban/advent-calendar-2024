@@ -1,3 +1,8 @@
+import { useContext } from "react";
+import classNames from "classnames";
+
+import AdventCalendarContext from "src/context/AdventCalendarContext";
+
 import styles from "./GiftBox.module.scss";
 
 interface GiftBoxProps {
@@ -11,8 +16,13 @@ interface GiftBoxProps {
 const GiftBox = (props: GiftBoxProps) => {
   const { boxPosition, giftBackgroundColor: backgroundColor } = props;
 
+  const { isDarkMode } = useContext(AdventCalendarContext);
+
   return (
-    <div className={styles.box} style={{ top: boxPosition?.top, right: boxPosition?.right }}>
+    <div
+      className={classNames(styles.box, { [styles["box--dark"]]: isDarkMode })}
+      style={{ top: boxPosition?.top, right: boxPosition?.right }}
+    >
       <div className={styles.tape}>
         <div className={styles.left}></div>
         <div className={styles.right}></div>

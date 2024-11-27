@@ -1,4 +1,7 @@
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
+import classNames from "classnames";
+
+import AdventCalendarContext from "src/context/AdventCalendarContext";
 
 import styles from "./Ornament.module.scss";
 
@@ -15,6 +18,8 @@ interface SantaSockProps {
 const SantaSock = (props: SantaSockProps) => {
   const { isHorizontallyMirrored, position, rotate, size } = props;
 
+  const { isDarkMode } = useContext(AdventCalendarContext);
+
   const transform = useMemo(() => {
     let transformStyle;
     if (isHorizontallyMirrored) {
@@ -26,7 +31,7 @@ const SantaSock = (props: SantaSockProps) => {
 
   return (
     <svg
-      className={styles.otherOrnament}
+      className={classNames(styles.otherOrnament, { [styles["otherOrnament--dark"]]: isDarkMode })}
       style={{ top: position?.top, right: position?.right, rotate, height: size, width: size, transform: transform }}
       version="1.1"
       x="0px"

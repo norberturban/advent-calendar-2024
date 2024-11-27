@@ -1,4 +1,4 @@
-.christmasDecorations {
+.container {
   position: relative;
 
   &:before {
@@ -6,13 +6,18 @@
     position: absolute;
     top: 10.25rem;
     left: -5rem;
-    height: 3.25rem;
+    height: 3.75rem;
     width: 12.5rem;
     border-radius: 50%;
-    background-color: #4e641af5;
     background-image: url("src/assets/carpet_pattern.jpg");
     background-size: cover;
     z-index: 1;
+  }
+
+  &--dark {
+    &:before {
+      filter: brightness(0.7);
+    }
   }
 }
 
@@ -33,7 +38,7 @@
     border-bottom: 7.5rem solid #238a5b;
     top: -15rem;
     left: -3.3125rem;
-    z-index: 1;
+    z-index: 3;
 
     &:before {
       content: "";
@@ -71,6 +76,7 @@
   .tree-middle {
     top: -8.125rem;
     left: -5.1875rem;
+    z-index: 2;
   }
 
   .tree-bottom {
@@ -86,5 +92,19 @@
     border-right: 3.125rem solid transparent;
     border-left: 3.125rem solid transparent;
     border-bottom: 6.25rem solid #238a5b;
+  }
+
+  &--dark {
+    background-color: #3d362b;
+
+    .tree-top .star {
+      background-color: #aaaa03;
+    }
+
+    .tree-top,
+    .tree-middle,
+    .tree-bottom {
+      border-bottom-color: #165a3a;
+    }
   }
 }
