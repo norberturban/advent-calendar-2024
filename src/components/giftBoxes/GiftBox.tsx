@@ -1,6 +1,6 @@
 import styles from "./GiftBox.module.scss";
 
-interface GibtBoxProps {
+interface GiftBoxProps {
   boxPosition?: {
     top?: string;
     right?: string;
@@ -8,7 +8,7 @@ interface GibtBoxProps {
   giftBackgroundColor?: string;
 }
 
-const GiftBox = (props: GibtBoxProps) => {
+const GiftBox = (props: GiftBoxProps) => {
   const { boxPosition, giftBackgroundColor: backgroundColor } = props;
 
   return (

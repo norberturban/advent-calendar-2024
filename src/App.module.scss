@@ -1,7 +1,81 @@
+$app-bg-color: #5e6d5a;
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  background-color: $app-bg-color;
+
+  &--dark {
+    background: darken($app-bg-color, 20%);
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 1;
+
+  & > div:first-of-type div {
+    background-color: #ffffff !important;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .snow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 36px;
+      width: 36px;
+
+      .snowflake {
+        display: inline-block;
+        position: relative;
+        width: 30px;
+        height: 4px;
+        rotate: 30deg;
+        background-color: white;
+        cursor: pointer;
+
+        &:after,
+        &:before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          transform: rotate(120deg);
+          background-color: white;
+        }
+
+        &:before {
+          transform: rotate(240deg);
+        }
+      }
+    }
+
+    .light {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 36px;
+      width: 36px;
+
+      svg {
+        height: 32px;
+        width: 32px;
+        cursor: pointer;
+      }
+    }
+  }
 }

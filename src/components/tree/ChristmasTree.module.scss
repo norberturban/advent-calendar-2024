@@ -12,6 +12,7 @@
     background-color: #4e641af5;
     background-image: url("src/assets/carpet_pattern.jpg");
     background-size: cover;
+    z-index: 1;
   }
 }
 
@@ -21,6 +22,7 @@
   height: 4.375rem;
   width: 2.1875rem;
   background-color: #5e5342;
+  z-index: 1;
 
   .tree-top {
     position: absolute;

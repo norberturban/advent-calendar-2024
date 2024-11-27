@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import AdventCalendarContext from "./AdventCalendarContext";
 
 interface AdventCalendarContextProviderProps {
@@ -6,11 +6,10 @@ interface AdventCalendarContextProviderProps {
 }
 
 const AdventCalendarContextProvider = ({ children }: AdventCalendarContextProviderProps) => {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [openedDay, setOpenedDay] = useState<null | number>(null);
 
-  useEffect(() => console.log({ openedDay }), [openedDay]);
-
-  const value = useMemo(() => ({ openedDay, setOpenedDay }), [openedDay]);
+  const value = useMemo(() => ({ isDarkMode, openedDay, setIsDarkMode, setOpenedDay }), [isDarkMode, openedDay]);
 
   return <AdventCalendarContext.Provider value={value}>{children}</AdventCalendarContext.Provider>;
 };
