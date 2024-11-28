@@ -8,6 +8,7 @@ import ChristmasTree from "./components/tree/ChristmasTree";
 import Modal from "./components/modal/Modal";
 import MoonIcon from "./components/icons/MoonIcon";
 import SunIcon from "./components/icons/SunIcon";
+import Fireplace from "./components/fireplace/Fireplace";
 
 import styles from "./App.module.scss";
 
@@ -35,6 +36,7 @@ const App = () => {
           ) : null}
         </div>
 
+        <Fireplace />
         <ChristmasTree />
       </div>
 
