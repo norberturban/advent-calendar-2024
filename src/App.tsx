@@ -26,7 +26,7 @@ const App = () => {
           {isOpen ? (
             <div className={styles.list}>
               <div className={styles.snow} onClick={() => setIsSnowing(curr => !curr)}>
-                <span className={styles.snowflake}>{isSnowing ? <>☁︎</> : <>❆</>}</span>
+                <span className={styles.snowflake}>{isSnowing ? <span className={styles.cloud} /> : <>❆</>}</span>
               </div>
 
               <div className={styles.light} onClick={() => setIsDarkMode(curr => !curr)}>

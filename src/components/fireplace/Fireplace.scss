@@ -27,6 +27,22 @@ $color-crown: #7db111;
   position: absolute;
   left: 17.5rem;
   top: 24rem;
+  z-index: 1;
+
+  &--dark {
+    .fireplace {
+      .top,
+      .bottom,
+      .bricks,
+      .chimney {
+        filter: brightness(0.7);
+      }
+
+      &:before {
+        filter: brightness(0.7);
+      }
+    }
+  }
 }
 
 ul.embers {
@@ -116,6 +132,7 @@ ul.embers {
     width: 16rem;
     height: 2rem;
     background-color: #8e3f30;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.7);
     &::before {
       content: "";
       position: absolute;
@@ -560,7 +577,7 @@ ul.embers {
   box-shadow:
     0 0 60px 0px rgb(182, 85, 85),
     0 0 100px 15px rgb(182, 85, 85),
-    0 0 140px 30px rgb(182, 85, 85);
+    0 0 100px 50px rgb(182, 85, 85);
   &::after {
     content: "";
     position: absolute;
