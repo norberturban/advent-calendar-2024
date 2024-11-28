@@ -38,29 +38,12 @@ $app-bg-color: #5e6d5a;
       align-items: center;
       height: 36px;
       width: 36px;
+      cursor: pointer;
 
       .snowflake {
-        display: inline-block;
-        position: relative;
-        width: 30px;
-        height: 4px;
-        rotate: 30deg;
-        background-color: white;
-        cursor: pointer;
-
-        &:after,
-        &:before {
-          content: "";
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          transform: rotate(120deg);
-          background-color: white;
-        }
-
-        &:before {
-          transform: rotate(240deg);
-        }
+        color: #ffffff;
+        font-size: 36px;
+        user-select: none;
       }
     }
 
