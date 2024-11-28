@@ -8,8 +8,12 @@ interface AdventCalendarContextProviderProps {
 const AdventCalendarContextProvider = ({ children }: AdventCalendarContextProviderProps) => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [openedDay, setOpenedDay] = useState<null | number>(null);
+  const [shouldShowCalendarDay, setShouldShowCalendarDay] = useState<boolean>(false);
 
-  const value = useMemo(() => ({ isDarkMode, openedDay, setIsDarkMode, setOpenedDay }), [isDarkMode, openedDay]);
+  const value = useMemo(
+    () => ({ isDarkMode, openedDay, setIsDarkMode, setOpenedDay, setShouldShowCalendarDay, shouldShowCalendarDay }),
+    [isDarkMode, openedDay, shouldShowCalendarDay]
+  );
 
   return <AdventCalendarContext.Provider value={value}>{children}</AdventCalendarContext.Provider>;
 };

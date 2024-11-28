@@ -8,15 +8,15 @@ import styles from "./Ornament.module.scss";
 const calendarDays = [
   {
     day: 1,
-    validFrom: new Date("2024-12-01T00:00:00")
+    validFrom: new Date("2024-11-26T00:00:00")
   },
   {
     day: 2,
-    validFrom: new Date("2024-12-02T00:00:00")
+    validFrom: new Date("2024-11-27T00:00:00")
   },
   {
     day: 3,
-    validFrom: new Date("2024-12-03T00:00:00")
+    validFrom: new Date("2024-11-28T00:00:00")
   },
   {
     day: 4,
@@ -112,7 +112,7 @@ interface OrnamentProps {
 const Ornament = (props: OrnamentProps) => {
   const { className, day } = props;
 
-  const { isDarkMode, setOpenedDay } = useContext(AdventCalendarContext);
+  const { isDarkMode, setOpenedDay, shouldShowCalendarDay } = useContext(AdventCalendarContext);
 
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
@@ -145,9 +145,13 @@ const Ornament = (props: OrnamentProps) => {
       })}
       onClick={handleOpenCalendarDay}
     >
+      {shouldShowCalendarDay ? day : null}
+
       <div className={styles.pendant}>
         <div className={styles.circle} />
       </div>
+
+      {isCalendarDayActive ? <div className={styles.shine} /> : null}
     </div>
   );
 };

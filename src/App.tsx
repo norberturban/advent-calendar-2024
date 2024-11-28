@@ -13,7 +13,8 @@ import Fireplace from "./components/fireplace/Fireplace";
 import styles from "./App.module.scss";
 
 const App = () => {
-  const { isDarkMode, openedDay, setIsDarkMode, setOpenedDay } = useContext(AdventCalendarContext);
+  const { isDarkMode, openedDay, setIsDarkMode, setOpenedDay, setShouldShowCalendarDay, shouldShowCalendarDay } =
+    useContext(AdventCalendarContext);
 
   const [isOpen, setOpen] = useState(false);
   const [isSnowing, setIsSnowing] = useState(false);
@@ -23,8 +24,17 @@ const App = () => {
       <div className={classNames(styles.container, { [styles["container--dark"]]: isDarkMode })}>
         <div className={styles.menu}>
           <Hamburger toggle={setOpen} toggled={isOpen} />
+
           {isOpen ? (
             <div className={styles.list}>
+              <div className={styles.calendarDays} onClick={() => setShouldShowCalendarDay(curr => !curr)}>
+                <span
+                  className={classNames(styles.icon, {
+                    [styles["icon--showCalendarDays"]]: shouldShowCalendarDay
+                  })}
+                />
+              </div>
+
               <div className={styles.snow} onClick={() => setIsSnowing(curr => !curr)}>
                 <span className={styles.snowflake}>{isSnowing ? <span className={styles.cloud} /> : <>❆</>}</span>
               </div>

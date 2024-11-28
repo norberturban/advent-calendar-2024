@@ -32,6 +32,29 @@ $app-bg-color: #5e6d5a;
     flex-direction: column;
     gap: 12px;
 
+    .calendarDays {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 36px;
+      width: 36px;
+      cursor: pointer;
+
+      .icon {
+        position: absolute;
+        height: 36px;
+        width: 36px;
+        background-image: url("src/assets/calendar_icon.png");
+        background-size: cover;
+
+        &--showCalendarDays {
+          width: 30px;
+          background-image: url("src/assets/ornament_icon.png");
+        }
+      }
+    }
+
     .snow {
       position: relative;
       display: flex;
