@@ -18,7 +18,9 @@ const ChristmasTree = () => {
     <div className={classNames(styles.container, { [styles["container--dark"]]: isDarkMode })}>
       <div className={classNames(styles.tree, { [styles["tree--dark"]]: isDarkMode })}>
         <div className={styles.treeTop}>
-          <div className={styles.star}></div>
+          <div className={styles.starContainer}>
+            <div className={styles.star} />
+          </div>
 
           <Ornament day={1} />
           <Ornament day={2} />

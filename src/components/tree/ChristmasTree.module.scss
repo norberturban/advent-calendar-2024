@@ -62,14 +62,16 @@
       transform: skew(45deg);
     }
 
-    .star {
-      position: absolute;
-      top: -1.5rem;
-      left: -1.25rem;
-      height: 2.5rem;
-      width: 2.5rem;
-      background-color: #d5d500;
-      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    .starContainer {
+      .star {
+        position: absolute;
+        top: -1.5rem;
+        left: -1.25rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        background-color: #d5d500;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      }
     }
   }
 
@@ -97,8 +99,14 @@
   &--dark {
     background-color: #3d362b;
 
-    .tree-top .star {
-      background-color: #aaaa03;
+    .tree-top .starContainer {
+      box-shadow:
+        0 0 60px 0px rgba(255, 255, 0, 0.6),
+        0 0 100px 10px rgba(255, 255, 0, 0.6),
+        0 0 140px 15px rgba(255, 255, 0, 0.6);
+      .star {
+        background-color: yellow;
+      }
     }
 
     .tree-top,
