@@ -105,8 +105,8 @@ const ChristmasTree = () => {
       </div>
 
       <GiftBox boxPosition={{ right: "7.75rem" }} />
-      <GiftBox boxPosition={{ right: "4.15rem" }} />
-      <GiftBox boxPosition={{ right: "0.5rem" }} />
+      <GiftBox boxPosition={{ right: "4.2rem" }} />
+      <GiftBox boxPosition={{ right: "0.6rem" }} />
     </div>
   );
 };
