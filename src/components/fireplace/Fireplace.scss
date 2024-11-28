@@ -805,3 +805,10 @@ ul.embers {
     }
   }
 }
+
+@media (max-width: 400px) {
+  .wrapper {
+    top: 33.75rem;
+    left: 3.5rem;
+  }
+}
