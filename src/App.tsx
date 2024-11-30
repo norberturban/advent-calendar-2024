@@ -52,11 +52,7 @@ const App = () => {
 
       {isSnowing ? <Snowfall /> : null}
 
-      {openedDay ? (
-        <Modal hasCloseBtn={false} isOpen onClose={() => setOpenedDay(null)}>
-          <div>{openedDay}</div>
-        </Modal>
-      ) : null}
+      {openedDay ? <Modal hasCloseBtn={false} isOpen onClose={() => setOpenedDay(null)} /> : null}
     </>
   );
 };
