@@ -3,6 +3,8 @@ import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import AdventCalendarContext from "src/context/AdventCalendarContext";
 import Tape from "src/components/giftBoxes/Tape";
 
+import calendarDay01 from "src/assets/peach_cat_pat_head.gif";
+
 import styles from "./Modal.module.scss";
 
 interface ModalProps {
@@ -86,7 +88,7 @@ const Modal = (props: ModalProps) => {
             December <span>{dayToShow}.</span>
           </div>
           <div className={styles.img}>
-            <img src="./src/assets/peach_cat_pat_head.gif" alt="Peach pat head" className="center" />
+            <img src={calendarDay01} alt="Peach pat head" className="center" />
             <div className={styles.picture}></div>
           </div>
         </div>
