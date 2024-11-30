@@ -8,15 +8,15 @@ import styles from "./Ornament.module.scss";
 const calendarDays = [
   {
     day: 1,
-    validFrom: new Date("2024-11-26T00:00:00")
+    validFrom: new Date("2024-12-01T00:00:00")
   },
   {
     day: 2,
-    validFrom: new Date("2024-11-27T00:00:00")
+    validFrom: new Date("2024-12-02T00:00:00")
   },
   {
     day: 3,
-    validFrom: new Date("2024-11-28T00:00:00")
+    validFrom: new Date("2024-12-03T00:00:00")
   },
   {
     day: 4,
