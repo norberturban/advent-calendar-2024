@@ -1,0 +1,58 @@
+.tape {
+  position: absolute;
+  bottom: 2.75rem;
+  left: 2.725rem;
+  height: 0.5rem;
+  width: 0.75rem;
+  transform-origin: 50% 230%;
+
+  .left,
+  .right {
+    position: absolute;
+    top: 0.075rem;
+    height: 1.25rem;
+    width: 1rem;
+    box-shadow: 0 0 0 0.175rem #ee2e2e inset;
+    background-color: #cc2424;
+    z-index: -1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      border-radius: inherit;
+      background-color: #ee2e2e;
+      inset: 0;
+    }
+  }
+
+  .left {
+    border-radius: 0.375rem 0 0.75rem 0.25rem / 0.375rem 0 0.75rem 0.875rem;
+    right: calc(100% - 0.1875rem);
+    transform: rotate(35deg);
+    transform-origin: 100% 15%;
+
+    &::before {
+      clip-path: polygon(0 42%, 100% 12%, 100% 100%, 0 100%);
+    }
+  }
+
+  .right {
+    border-radius: 0 0.375rem 0.25rem 0.75rem / 0 0.375rem 0.875rem 0.75rem;
+    left: calc(100% - 0.1875rem);
+    transform: rotate(-35deg);
+    transform-origin: 0% 15%;
+
+    &::before {
+      clip-path: polygon(0 12%, 100% 42%, 100% 100%, 0 100%);
+    }
+  }
+
+  .center {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.25rem;
+    background-color: #cc2424;
+  }
+}

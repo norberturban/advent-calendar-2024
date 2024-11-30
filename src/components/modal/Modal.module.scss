@@ -22,65 +22,6 @@
     width: 17.5rem;
     padding: 0;
 
-    .tape {
-      position: absolute;
-      bottom: 2.75rem;
-      left: 2.725rem;
-      height: 0.5rem;
-      width: 0.75rem;
-      transform-origin: 50% 230%;
-
-      .left,
-      .right {
-        position: absolute;
-        top: 0.075rem;
-        height: 1.25rem;
-        width: 1rem;
-        box-shadow: 0 0 0 0.175rem #ee2e2e inset;
-        background-color: #cc2424;
-        z-index: -1;
-
-        &::before {
-          content: "";
-          position: absolute;
-          display: block;
-          border-radius: inherit;
-          background-color: #ee2e2e;
-          inset: 0;
-        }
-      }
-
-      .left {
-        border-radius: 0.375rem 0 0.75rem 0.25rem / 0.375rem 0 0.75rem 0.875rem;
-        right: calc(100% - 0.1875rem);
-        transform: rotate(35deg);
-        transform-origin: 100% 15%;
-
-        &::before {
-          clip-path: polygon(0 42%, 100% 12%, 100% 100%, 0 100%);
-        }
-      }
-
-      .right {
-        border-radius: 0 0.375rem 0.25rem 0.75rem / 0 0.375rem 0.875rem 0.75rem;
-        left: calc(100% - 0.1875rem);
-        transform: rotate(-35deg);
-        transform-origin: 0% 15%;
-
-        &::before {
-          clip-path: polygon(0 12%, 100% 42%, 100% 100%, 0 100%);
-        }
-      }
-
-      .center {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        border-radius: 0.25rem;
-        background-color: #cc2424;
-      }
-    }
-
     .top {
       display: flex;
       align-items: center;
@@ -96,8 +37,9 @@
         left: 0.25rem;
         display: flex;
         gap: 0.25rem;
-        font-size: 0.9rem;
+        font-size: 0.65rem;
         font-family: "Parkinsans", sans-serif;
+        text-shadow: 2px 2px 3px #0008;
       }
 
       .img {
@@ -115,18 +57,41 @@
     }
 
     .bottom {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 10rem;
       width: 100%;
-      background-color: aquamarine;
+      color: white;
+      background-color: #cc2424;
       border-bottom-left-radius: 1.5rem;
       line-height: 1.5rem;
       font-size: 0.8rem;
       font-family: "Parkinsans", sans-serif;
       font-weight: 500;
+      text-shadow: 2px 2px 3px #0008;
+
+      .snowman {
+        position: absolute;
+        top: 0.25rem;
+        left: 0.25rem;
+        height: 2.25rem;
+        width: 2.25rem;
+        background-image: url("src/assets/snowman.png");
+        background-size: cover;
+      }
+
+      .snowGlobe {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 2.5rem;
+        width: 2.5rem;
+        background-image: url("src/assets/snow_globe.png");
+        background-size: cover;
+      }
     }
   }
 }

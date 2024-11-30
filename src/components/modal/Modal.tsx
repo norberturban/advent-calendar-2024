@@ -1,7 +1,9 @@
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
 
-import styles from "./Modal.module.scss";
 import AdventCalendarContext from "src/context/AdventCalendarContext";
+import Tape from "src/components/giftBoxes/Tape";
+
+import styles from "./Modal.module.scss";
 
 interface ModalProps {
   isOpen: boolean;
@@ -78,20 +80,19 @@ const Modal = (props: ModalProps) => {
   return (
     <dialog ref={modalRef} onKeyDown={handleKeyDown} className={styles.modal}>
       <div className={styles.container} ref={containerRef}>
-        <div className={styles.tape}>
-          <div className={styles.left}></div>
-          <div className={styles.right}></div>
-          <div className={styles.center}></div>
-        </div>
+        <Tape position={{ top: "0", left: "16rem" }} rotate="45deg" />
         <div className={styles.top}>
           <div className={styles.date}>
             December <span>{dayToShow}.</span>
           </div>
           <div className={styles.img}>
-            <img src="src/assets/peach_cat_pat_head.gif" alt="Peach pat head" className="center" />
+            <img src="./src/assets/peach_cat_pat_head.gif" alt="Peach pat head" className="center" />
+            <div className={styles.picture}></div>
           </div>
         </div>
         <div className={styles.bottom}>
+          <div className={styles.snowman} />
+          <div className={styles.snowGlobe} />
           {/* <div>"Napfény csiklandoz, nevetés kél,</div>
           <div>nyárban az élet mesévé ér."</div> */}
           <div>"Lágy érintés, mosolyod fénye,</div>
