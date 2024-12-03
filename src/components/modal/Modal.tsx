@@ -7,11 +7,11 @@ import calendarDay01 from "src/assets/peach_cat_pat_head.gif";
 import calendarDay02 from "src/assets/peach_cat_watergun.gif";
 import calendarDay03 from "src/assets/peach_cat_window.png";
 import calendarDay04 from "src/assets/peach_cat_drink_tea_together.gif";
-
-import calendarDay05 from "src/assets/peach_cat_blanket.gif";
+import calendarDay05 from "src/assets/peach_cat_lay_on_ground.gif";
 import calendarDay06 from "src/assets/peach_cat_santa_star.png";
-import calendarDay07 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay08 from "src/assets/peach_cat_pat_head.gif";
+import calendarDay07 from "src/assets/peach_cat_flower.gif";
+import calendarDay08 from "src/assets/peach_cat_round_round.gif";
+
 import calendarDay09 from "src/assets/peach_cat_pat_head.gif";
 import calendarDay10 from "src/assets/peach_cat_pat_head.gif";
 import calendarDay11 from "src/assets/peach_cat_pat_head.gif";
@@ -75,22 +75,44 @@ const calendarDays = [
   {
     day: 5,
     image: calendarDay05,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Kéz a kézben, s csendben álmodunk,</div>
+        <div>szívünk dallamán együtt ringatódzunk."</div>
+      </>
+    )
   },
   {
     day: 6,
     image: calendarDay06,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Csillag szórja fényét, itt a Mikulás,</div>
+        <div>legszebb ajándékom nekem te vagy,</div>
+        <div>senki más."</div>
+      </>
+    )
   },
   {
     day: 7,
     image: calendarDay07,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Virágot virágnak, szívem neked adom,</div>
+        <div>üde mosolyodban az öröm otthonom."</div>
+      </>
+    )
   },
+
   {
     day: 8,
     image: calendarDay08,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Karomba forgatlak és száll velünk a lét,</div>
+        <div>örvénylő boldogság, együtt minden szép."</div>
+      </>
+    )
   },
   {
     day: 9,
