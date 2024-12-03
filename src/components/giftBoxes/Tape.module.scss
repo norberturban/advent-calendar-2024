@@ -55,4 +55,28 @@
     border-radius: 0.25rem;
     background-color: #cc2424;
   }
+
+  &--animated {
+    animation: animated 2.5s infinite ease-in-out;
+  }
+
+  &--isOpen {
+    bottom: 2.35rem;
+    left: 1.645rem;
+    rotate: -75deg;
+  }
+}
+
+@keyframes animated {
+  0%,
+  50%,
+  100% {
+    rotate: 0;
+  }
+  25% {
+    rotate: 5deg;
+  }
+  75% {
+    rotate: -5deg;
+  }
 }

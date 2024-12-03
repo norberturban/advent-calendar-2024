@@ -96,3 +96,14 @@ $app-bg-color: #5e6d5a;
     }
   }
 }
+
+.santa {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 10rem;
+  width: 10rem;
+  z-index: 15;
+  background-size: cover;
+  background-image: url("src/assets/santa_norbert.png");
+}

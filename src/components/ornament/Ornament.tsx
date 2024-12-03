@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useMemo } from "react";
 import classNames from "classnames";
 
 import AdventCalendarContext from "src/context/AdventCalendarContext";
@@ -112,26 +112,16 @@ interface OrnamentProps {
 const Ornament = (props: OrnamentProps) => {
   const { className, day } = props;
 
-  const { isDarkMode, setOpenedDay, shouldShowCalendarDay } = useContext(AdventCalendarContext);
-
-  const [currentDateTime, setCurrentDateTime] = useState(new Date());
-
-  useEffect(() => {
-    const timerId = setInterval(() => setCurrentDateTime(new Date()), 1000);
-
-    return () => {
-      clearInterval(timerId);
-    };
-  }, []);
+  const { currentDateTime, isDarkMode, setOpenedDay, shouldShowCalendarDay } = useContext(AdventCalendarContext);
 
   const calendarDay = useMemo(() => calendarDays.find(d => d.day === day) || null, []);
+
   const isCalendarDayActive = useMemo(
     () => (calendarDay ? calendarDay?.validFrom <= currentDateTime : false),
     [calendarDay, currentDateTime]
   );
 
   const handleOpenCalendarDay = () => {
-    console.log({ validFrom: calendarDay?.validFrom, currentDateTime, day, isCalendarDayActive });
     if (isCalendarDayActive) {
       setOpenedDay(day);
     }

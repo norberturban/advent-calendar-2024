@@ -11,24 +11,32 @@ interface GiftBoxProps {
     top?: string;
     right?: string;
   };
-  giftBackgroundColor?: string;
+  isClickable?: boolean;
+  isOpen?: boolean;
+  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const GiftBox = (props: GiftBoxProps) => {
-  const { boxPosition, giftBackgroundColor: backgroundColor } = props;
+  const { boxPosition, isClickable, isOpen, setIsOpen } = props;
 
   const { isDarkMode } = useContext(AdventCalendarContext);
 
   return (
     <div
-      className={classNames(styles.box, { [styles["box--dark"]]: isDarkMode })}
+      className={classNames(styles.box, {
+        [styles["box--animated"]]: isClickable && !isOpen,
+        [styles["box--dark"]]: isDarkMode,
+        [styles["box--isOpen"]]: isOpen,
+        [styles["box--isOpenable"]]: isClickable
+      })}
+      onClick={() => (setIsOpen ? setIsOpen(currentValue => !currentValue) : null)}
       style={{ top: boxPosition?.top, right: boxPosition?.right }}
     >
-      <Tape />
-      <div className={styles.gifts} style={{ backgroundColor }}>
+      <Tape isClickable={isClickable} isOpen={isOpen} />
+      <div className={styles.gifts}>
         <div className={styles.shadow}></div>
       </div>
-      <div className={styles.gift} style={{ backgroundColor }}></div>
+      <div className={styles.gift}></div>
     </div>
   );
 };

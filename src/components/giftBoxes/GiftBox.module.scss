@@ -4,46 +4,88 @@
   right: 7.5rem;
   z-index: 10;
 
+  .gifts {
+    position: absolute;
+    bottom: 0.125rem;
+    left: 1.65rem;
+    overflow: hidden;
+    height: 2.25rem;
+    width: 2.85rem;
+    border-radius: 0.375rem;
+    background:
+      linear-gradient(#cc2424, #cc2424) 50% 50% / 0.85rem 100% no-repeat,
+      #efffee;
+
+    transform-origin: 50% 100%;
+
+    .shadow {
+      position: absolute;
+      top: -0.375rem;
+      left: -0.25rem;
+      height: 0.825rem;
+      width: 3.25rem;
+      border-radius: 0.5rem;
+      background-color: #00000010;
+      transform-origin: 50% 100%;
+    }
+  }
+
+  .gift {
+    position: absolute;
+    bottom: 2.175rem;
+    left: 1.45rem;
+    height: 0.825rem;
+    width: 3.25rem;
+    border-radius: 0.25rem;
+    background:
+      linear-gradient(#ee2e2e, #ee2e2e) 50% 50% / 0.85rem 100% no-repeat,
+      #efffee;
+    transform-origin: 50% 100%;
+  }
+
   &--dark {
     filter: brightness(0.7);
   }
-}
 
-.gifts {
-  position: absolute;
-  bottom: 0.125rem;
-  left: 1.65rem;
-  overflow: hidden;
-  height: 2.25rem;
-  width: 2.85rem;
-  border-radius: 0.375rem;
-  background:
-    linear-gradient(#cc2424, #cc2424) 50% 50% / 0.85rem 100% no-repeat,
-    #efffee;
+  &--animated {
+    .gifts .shadow {
+      animation: animated 2.5s infinite ease-in-out;
+    }
 
-  transform-origin: 50% 100%;
+    .gift {
+      animation: animated 2.5s infinite ease-in-out;
+    }
+  }
 
-  .shadow {
-    position: absolute;
-    top: -0.375rem;
-    left: -0.25rem;
-    height: 0.825rem;
-    width: 3.25rem;
-    border-radius: 0.5rem;
-    background-color: #00000010;
-    transform-origin: 50% 100%;
+  &--isOpenable {
+    cursor: pointer;
+  }
+
+  &--isOpen {
+    .gifts .shadow {
+      height: 2.7rem;
+      width: 0.4rem;
+      rotate: 15deg;
+    }
+
+    .gift {
+      bottom: 1.75rem;
+      left: 0.35rem;
+      rotate: -75deg;
+    }
   }
 }
 
-.gift {
-  position: absolute;
-  bottom: 2.175rem;
-  left: 1.45rem;
-  height: 0.825rem;
-  width: 3.25rem;
-  border-radius: 0.25rem;
-  background:
-    linear-gradient(#ee2e2e, #ee2e2e) 50% 50% / 0.85rem 100% no-repeat,
-    #efffee;
-  transform-origin: 50% 100%;
+@keyframes animated {
+  0%,
+  50%,
+  100% {
+    rotate: 0;
+  }
+  25% {
+    rotate: 5deg;
+  }
+  75% {
+    rotate: -5deg;
+  }
 }

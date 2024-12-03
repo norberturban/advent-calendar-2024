@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import classNames from "classnames";
 
 import AdventCalendarContext from "src/context/AdventCalendarContext";
@@ -12,7 +12,9 @@ import RopeLight from "src/components/ropeLight/RopeLight";
 import styles from "./ChristmasTree.module.scss";
 
 const ChristmasTree = () => {
-  const { isDarkMode } = useContext(AdventCalendarContext);
+  const { currentDateTime, isDarkMode, isFirstGiftOpen, setIsFirstGiftOpen } = useContext(AdventCalendarContext);
+
+  const isFirstGiftOpenable = useMemo(() => currentDateTime >= new Date("2024-12-06T00:00:00"), [currentDateTime]);
 
   return (
     <div className={classNames(styles.container, { [styles["container--dark"]]: isDarkMode })}>
@@ -106,7 +108,12 @@ const ChristmasTree = () => {
         </div>
       </div>
 
-      <GiftBox boxPosition={{ right: "7.75rem" }} />
+      <GiftBox
+        boxPosition={{ right: "7.75rem" }}
+        isClickable={isFirstGiftOpenable}
+        isOpen={isFirstGiftOpen}
+        setIsOpen={isFirstGiftOpenable ? setIsFirstGiftOpen : undefined}
+      />
       <GiftBox boxPosition={{ right: "4.2rem" }} />
       <GiftBox boxPosition={{ right: "0.6rem" }} />
     </div>

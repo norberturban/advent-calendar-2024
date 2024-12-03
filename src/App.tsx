@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Snowfall from "react-snowfall";
 import classNames from "classnames";
 import Hamburger from "hamburger-react";
@@ -10,14 +10,39 @@ import MoonIcon from "./components/icons/MoonIcon";
 import SunIcon from "./components/icons/SunIcon";
 import Fireplace from "./components/fireplace/Fireplace";
 
+import hohohoSound from "./assets/santa_ho_ho_ho.mp3";
+
 import styles from "./App.module.scss";
 
 const App = () => {
-  const { isDarkMode, openedDay, setIsDarkMode, setOpenedDay, setShouldShowCalendarDay, shouldShowCalendarDay } =
-    useContext(AdventCalendarContext);
+  const {
+    isDarkMode,
+    isFirstGiftOpen,
+    openedDay,
+    setIsDarkMode,
+    setOpenedDay,
+    setShouldShowCalendarDay,
+    shouldShowCalendarDay
+  } = useContext(AdventCalendarContext);
 
   const [isOpen, setOpen] = useState(false);
   const [isSnowing, setIsSnowing] = useState(false);
+
+  const soundRef = useRef(new Audio(hohohoSound));
+
+  useEffect(() => {
+    let timeoutId: number;
+    if (isFirstGiftOpen) {
+      timeoutId = setTimeout(() => {
+        soundRef.current.currentTime = 0;
+        soundRef.current.play();
+      }, 2500);
+    } else {
+      soundRef.current.pause();
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [isFirstGiftOpen]);
 
   return (
     <>
@@ -48,6 +73,8 @@ const App = () => {
 
         <Fireplace />
         <ChristmasTree />
+
+        {isFirstGiftOpen ? <div className={styles.santa} /> : null}
       </div>
 
       {isSnowing ? <Snowfall /> : null}
