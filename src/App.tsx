@@ -1,4 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Snowfall from "react-snowfall";
 import classNames from "classnames";
 import Hamburger from "hamburger-react";
@@ -73,9 +74,9 @@ const App = () => {
 
         <Fireplace />
         <ChristmasTree />
-
-        {isFirstGiftOpen ? <div className={styles.santa} /> : null}
       </div>
+
+      {isFirstGiftOpen ? createPortal(<div className={styles.santa} />, document.body) : null}
 
       {isSnowing ? <Snowfall /> : null}
 
