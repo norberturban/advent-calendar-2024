@@ -11,6 +11,7 @@ import MoonIcon from "./components/icons/MoonIcon";
 import SunIcon from "./components/icons/SunIcon";
 import Fireplace from "./components/fireplace/Fireplace";
 
+import santaNorbert from "src/assets/santa_norbert.png";
 import hohohoSound from "./assets/santa_ho_ho_ho.mp3";
 
 import styles from "./App.module.scss";
@@ -76,7 +77,14 @@ const App = () => {
         <ChristmasTree />
       </div>
 
-      {isFirstGiftOpen ? createPortal(<div className={styles.santa} />, document.body) : null}
+      {isFirstGiftOpen
+        ? createPortal(
+            <div className={styles.santa}>
+              <img src={santaNorbert} alt="Santa Norbert" className="center" />
+            </div>,
+            document.body
+          )
+        : null}
 
       {isSnowing ? <Snowfall /> : null}
 
