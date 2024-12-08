@@ -11,11 +11,11 @@ import calendarDay05 from "src/assets/peach_cat_lay_on_ground.gif";
 import calendarDay06 from "src/assets/peach_cat_santa_star.png";
 import calendarDay07 from "src/assets/peach_cat_flower.gif";
 import calendarDay08 from "src/assets/peach_cat_round_round.gif";
+import calendarDay09 from "src/assets/peach_cat_tag.gif";
+import calendarDay10 from "src/assets/peach_cat_shopping.png";
+import calendarDay11 from "src/assets/peach_cat_cook.gif";
+import calendarDay12 from "src/assets/peach_cat_game.gif";
 
-import calendarDay09 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay10 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay11 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay12 from "src/assets/peach_cat_pat_head.gif";
 import calendarDay13 from "src/assets/peach_cat_pat_head.gif";
 import calendarDay14 from "src/assets/peach_cat_pat_head.gif";
 import calendarDay15 from "src/assets/peach_cat_pat_head.gif";
@@ -117,22 +117,46 @@ const calendarDays = [
   {
     day: 9,
     image: calendarDay09,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Szökellve futunk, kacaj kél nyomán,</div>
+        <div>huncutkodunk egymással</div>
+        <div>a szerelem ritmusán."</div>
+      </>
+    )
   },
   {
     day: 10,
     image: calendarDay10,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Kosárban kacagás, szemünk a pályán,</div>
+        <div>együtt a vásárlás is egy</div>
+        <div>nagy kaland az életünk moziján." </div>
+      </>
+    )
   },
   {
     day: 11,
     image: calendarDay11,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Kedvesem főz, szívből készül az étel,</div>
+        <div>nemcsak táplál, életünket is fűszerezi</div>
+        <div>a mester."</div>
+      </>
+    )
   },
   {
     day: 12,
     image: calendarDay12,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Játék közben szívünk összefonódik,</div>
+        <div>minden pillanatban</div>
+        <div>szeretetünk megújhodik."</div>
+      </>
+    )
   },
   {
     day: 13,
