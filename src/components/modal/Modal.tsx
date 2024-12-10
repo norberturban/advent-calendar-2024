@@ -16,13 +16,15 @@ import calendarDay10 from "src/assets/peach_cat_shopping.png";
 import calendarDay11 from "src/assets/peach_cat_cook.gif";
 import calendarDay12 from "src/assets/peach_cat_game.gif";
 
-import calendarDay13 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay14 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay15 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay16 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay17 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay18 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay19 from "src/assets/peach_cat_pat_head.gif";
+import calendarDay13 from "src/assets/peach_cat_heart_gun.gif";
+import calendarDay14 from "src/assets/peach_cat_cute.png";
+import calendarDay15 from "src/assets/peach_cat_hug.gif";
+import calendarDay16 from "src/assets/peach_cat_wall.png";
+import calendarDay17 from "src/assets/peach_cat_blanket_jump.gif";
+import calendarDay18 from "src/assets/peach_cat_angry.gif";
+
+import calendarDay19 from "src/assets/peach_cat_slide.gif";
+
 import calendarDay20 from "src/assets/peach_cat_pat_head.gif";
 import calendarDay21 from "src/assets/peach_cat_pat_head.gif";
 import calendarDay22 from "src/assets/peach_cat_pat_head.gif";
@@ -143,7 +145,7 @@ const calendarDays = [
       <>
         <div>"Kedvesem főz, szívből készül az étel,</div>
         <div>nemcsak táplál, életünket is fűszerezi</div>
-        <div>a mester."</div>
+        <div>lélekkel és szívvel."</div>
       </>
     )
   },
@@ -161,37 +163,78 @@ const calendarDays = [
   {
     day: 13,
     image: calendarDay13,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Szívek repülnek, a levegő megtelik,</div>
+        <div>kellemes hangulatban a szívünk</div>
+        <div>összemelegedik."</div>
+      </>
+    )
   },
   {
     day: 14,
     image: calendarDay14,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Ujjad érint, mosolyunk megcsillan,</div>
+        <div>csend egy pillanatban, szívünk csak</div>
+        <div>dobban és dobban."</div>
+      </>
+    )
   },
   {
     day: 15,
     image: calendarDay15,
-    quote: <></>
+    quote: (
+      <div className={styles.modifiedRow}>
+        <div>"Összefonódunk egymás karjaiban,</div>
+        <div>mint szívünk,</div>
+        <div>puszit nyomva a homlokodra</div>
+        <div>összemelegedünk."</div>
+      </div>
+    )
   },
   {
     day: 16,
     image: calendarDay16,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Leskelődve nézlek, vajon merre jársz,</div>
+        <div>bújócskázol netán te kis ravasz?</div>
+        <div>Titokban már rég rám vársz."</div>
+      </>
+    )
   },
   {
     day: 17,
     image: calendarDay17,
-    quote: <></>
+    quote: (
+      <>
+        <div>Pihenek egyedül, fekszem a takaró alatt,</div>
+        <div>mégis hideg van, hiányzik valami,</div>
+        <div>de be is ugrik mellém percek alatt."</div>
+      </>
+    )
   },
   {
     day: 18,
     image: calendarDay18,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Kicsi a lány, cuki és édes,</div>
+        <div>de mint a bors, mint a bolondgomba,</div>
+        <div>amikor csak mérges."</div>
+      </>
+    )
   },
   {
     day: 19,
     image: calendarDay19,
-    quote: <></>
+    quote: (
+      <>
+        <div></div>
+      </>
+    )
   },
   {
     day: 20,
