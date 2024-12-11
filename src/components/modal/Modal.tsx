@@ -1,4 +1,5 @@
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
+import classNames from "classnames";
 
 import AdventCalendarContext from "src/context/AdventCalendarContext";
 import Tape from "src/components/giftBoxes/Tape";
@@ -15,21 +16,18 @@ import calendarDay09 from "src/assets/peach_cat_tag.gif";
 import calendarDay10 from "src/assets/peach_cat_shopping.png";
 import calendarDay11 from "src/assets/peach_cat_cook.gif";
 import calendarDay12 from "src/assets/peach_cat_game.gif";
-
 import calendarDay13 from "src/assets/peach_cat_heart_gun.gif";
 import calendarDay14 from "src/assets/peach_cat_cute.png";
 import calendarDay15 from "src/assets/peach_cat_hug.gif";
 import calendarDay16 from "src/assets/peach_cat_wall.png";
 import calendarDay17 from "src/assets/peach_cat_blanket_jump.gif";
 import calendarDay18 from "src/assets/peach_cat_angry.gif";
-
 import calendarDay19 from "src/assets/peach_cat_slide.gif";
-
-import calendarDay20 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay21 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay22 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay23 from "src/assets/peach_cat_pat_head.gif";
-import calendarDay24 from "src/assets/peach_cat_pat_head.gif";
+import calendarDay20 from "src/assets/peach_cat_duck.gif";
+import calendarDay21 from "src/assets/peach_cat_dance.gif";
+import calendarDay22 from "src/assets/peach_cat_hold_up.gif";
+import calendarDay23 from "src/assets/peach_cat_sad_slide.gif";
+import calendarDay24 from "src/assets/peach_cat_christmas_tree.png";
 
 import styles from "./Modal.module.scss";
 
@@ -232,34 +230,69 @@ const calendarDays = [
     image: calendarDay19,
     quote: (
       <>
-        <div></div>
+        <div>"Kicsi csúszda, nagy csúszás,</div>
+        <div>együtt, mint az élet,</div>
+        <div>úgy sokkal jobb, mókás."</div>
       </>
     )
   },
   {
     day: 20,
     image: calendarDay20,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Rugó hintán pattogva kacag a világ,</div>
+        <div>örömünk szárnyal, mint szabad madár."</div>
+      </>
+    )
   },
   {
     day: 21,
     image: calendarDay21,
-    quote: <></>
+    quote: (
+      <div className={styles.modifiedRow}>
+        <div>"Életünk egy tánc, hatalmas pörgés,</div>
+        <div>elkaplak ha elesnél,</div>
+        <div>támaszod vagyok, sose szomorkodj,</div>
+        <div>csak mindig nevessél."</div>
+      </div>
+    )
   },
   {
     day: 22,
     image: calendarDay22,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Szülinap, ma nekem szülinap,</div>
+        <div>de mit is kérjek magamnak?</div>
+        <div>Nem kell nekem más, csak te,</div>
+        <div>jajj de nagyon megleszel ölelve."</div>
+      </>
+    )
   },
   {
     day: 23,
     image: calendarDay23,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Szomorkodok néha,</div>
+        <div>sok mindenhez nincsen kedvem,</div>
+        <div>na de ilyenkor mindig segít</div>
+        <div>nekem a drága kedvesem."</div>
+      </>
+    )
   },
   {
     day: 24,
     image: calendarDay24,
-    quote: <></>
+    quote: (
+      <>
+        <div>"Itt van a karácsony,</div>
+        <div>itt vannak az ünnepek,</div>
+        <div>a kalendár elköszönöm,</div>
+        <div>jövőre újra integet."</div>
+      </>
+    )
   }
 ];
 
@@ -349,8 +382,11 @@ const Modal = (props: ModalProps) => {
             December <span>{dayToShow}.</span>
           </div>
           <div className={styles.img}>
-            <img src={calendarDay.image} alt="Peach pat head" className="center" />
-            <div className={styles.picture}></div>
+            <img
+              alt="Peach pat head"
+              className={classNames("center", { [styles.biggerImg]: openedDay === 23 })}
+              src={calendarDay.image}
+            />
           </div>
         </div>
         <div className={styles.bottom}>
